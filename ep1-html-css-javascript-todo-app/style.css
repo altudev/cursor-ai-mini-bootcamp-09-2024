@@ -1,0 +1,159 @@
+body {
+  font-family: "Indie Flower", cursive; /* El yazısı fontu */
+  background: linear-gradient(
+    135deg,
+    #ffa500,
+    #ff8c00,
+    #ff6347
+  ); /* Turuncu gradient */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  animation: sayfaYukleme 0.7s ease-in-out; /* Sayfa yükleme animasyonu */
+}
+
+.todo-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  box-sizing: border-box; /* Bu, padding'in width içinde sayılmasını sağlar */
+}
+
+h1 {
+  color: #4a4a4a;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+#yeni-todo {
+  padding: 12px;
+  border: 2px solid #a0a0a0; /* Açık gri kenarlık */
+  border-radius: 8px; /* Hafif yuvarlatılmış köşeler */
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Bu, border ve padding'in width içinde sayılmasını sağlar */
+}
+
+#yeni-todo:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+#ekle-butonu {
+  padding: 12px 25px;
+  background-color: #4caf50; /* Yeşil buton */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+#ekle-butonu:hover {
+  background-color: #45a049;
+}
+
+#todo-listesi {
+  list-style: none;
+  padding: 0;
+  width: 100%; /* Liste genişliği */
+  margin-top: 20px;
+  background-color: #fff; /* Beyaz liste arka planı */
+  border-radius: 10px; /* Yuvarlatılmış köşeler */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
+}
+
+#todo-listesi li {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: kayma 0.3s ease-in-out; /* Liste elemanlarına kayma animasyonu */
+}
+
+@keyframes kayma {
+  0% {
+    transform: translateX(10px); /* Başlangıçta 10px sağda */
+    opacity: 0; /* Başlangıçta görünmez */
+  }
+  100% {
+    transform: translateX(0); /* Sonunda orijinal konumunda */
+    opacity: 1; /* Sonunda görünür */
+  }
+}
+
+#todo-listesi li:last-child {
+  border-bottom: none; /* Son elemanın alt çizgisini kaldır */
+}
+
+.sil-butonu {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sil-butonu:hover {
+  background-color: #ff4757;
+  transform: scale(1.05); /* Sil butonuna hover efekti */
+}
+
+@keyframes sayfaYukleme {
+  0% {
+    opacity: 0; /* Başlangıçta görünmez */
+  }
+  100% {
+    opacity: 1; /* Sonunda görünür */
+  }
+}
+
+.duzenle-butonu {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.duzenle-butonu:hover {
+  background-color: #2980b9;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-right: 10px;
+  transition: text-decoration 0.3s ease;
+}
+
+.tamamlandi {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
