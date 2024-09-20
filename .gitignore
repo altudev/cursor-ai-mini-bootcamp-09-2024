@@ -86,3 +86,20 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Python Bytecode 
+*.pyc
+__pycache__/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
